@@ -1,0 +1,2 @@
+DELETE FROM Address;
+DELETE FROM Person;

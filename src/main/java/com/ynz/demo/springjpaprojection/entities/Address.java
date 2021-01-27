@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,10 +28,11 @@ public class Address {
 
     private String street;
 
+    @Column(name = "zip_code")
     private String zipCode;
 
     @OneToOne
-    @JoinColumn
+    @JoinColumn(name = "fk_person")
     private Person person;
 
 }
