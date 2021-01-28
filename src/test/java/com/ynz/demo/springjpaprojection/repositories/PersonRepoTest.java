@@ -2,6 +2,7 @@ package com.ynz.demo.springjpaprojection.repositories;
 
 import com.ynz.demo.springjpaprojection.entities.Person;
 import com.ynz.demo.springjpaprojection.projections.PersonView;
+import com.ynz.demo.springjpaprojection.projections.classbased.PersonDto;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +46,17 @@ class PersonRepoTest {
     void getFullNameFromPersonView() {
         PersonView personViews = personRepo.findByAddressCityIgnoreCase("Berlin").get(0);
         assertThat(personViews.getFullName(), is("aaa bbb"));
+    }
+
+    @Test
+    @DisplayName("class-based projection")
+    void getPersonDtoFromRepo() {
+        List<PersonDto> personDtos = personRepo.findByFirstName("ccc");
+
+        assertAll(
+                () -> assertThat(personDtos, hasSize(1)),
+                () -> assertThat(personDtos.get(0).getLastName(), is("ddd"))
+        );
     }
 
 }
