@@ -26,5 +26,5 @@ drawback: its query is created during the runtime, so Spring cannot optimize the
 
 instead of defining interfaces and allowing Spring to create proxy around them, we may create our own classes to project from the root entity via the repository.
 
-a constraint: the class overrides hashcode and equal; constructor parameter name must the same as the counterparts declared in the root entity. 
+a constraint: the class overrides hashcode and equal(the class may be handled in a collection); constructor parameter name must be the same as the counterparts declared in the root entity. 
 
