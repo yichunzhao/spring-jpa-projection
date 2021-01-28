@@ -1,7 +1,7 @@
 package com.ynz.demo.springjpaprojection.repositories;
 
 import com.ynz.demo.springjpaprojection.entities.Person;
-import com.ynz.demo.springjpaprojection.projections.PersonView;
+import com.ynz.demo.springjpaprojection.projections.interfacebased.PersonView;
 import com.ynz.demo.springjpaprojection.projections.classbased.PersonDto;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

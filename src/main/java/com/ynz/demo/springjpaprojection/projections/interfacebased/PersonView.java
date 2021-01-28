@@ -1,4 +1,4 @@
-package com.ynz.demo.springjpaprojection.projections;
+package com.ynz.demo.springjpaprojection.projections.interfacebased;
 
 import org.springframework.beans.factory.annotation.Value;
 
