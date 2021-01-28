@@ -14,7 +14,7 @@ a closed projection means a method name exactly matches an attribute name.
 
 a constrain: the closed projection interface is only used as an element type of a collection.
 
-a closed project may carry out a nested projection, but it must root on the owner side, otherwise, on the inverse side, it doesn't have a reference to the external entity. 
+a closed project may carry out a nested projection, but it must root on the owner side, otherwise, on the inverse side, it doesn't have a reference to the nested entity. 
 
 #### open projection 
 
