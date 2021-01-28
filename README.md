@@ -4,7 +4,7 @@ the jpa projection is used to select partial entity attribute that the client is
 
 ## projection types
 
-### interface based projection
+### interface-based projection
 
 Spring rely on the interface to create proxy to wrap an entity so as to modify the entity behaviours.
 
@@ -22,9 +22,14 @@ An open projection decorated with SpEL enables us to define interface methods wi
 
 drawback: its query is created during the runtime, so Spring cannot optimize the query in the advance.
 
-## class-based project
+## class-based projection
 
 instead of defining interfaces and allowing Spring to create proxy around them, we may create our own classes to project from the root entity via the repository.
 
 a constraint: the class overrides hashcode and equal(the class may be handled in a collection); constructor parameter name must be the same as the counterparts declared in the root entity. 
+
+## dynamic projection
+
+an root entity is queried through a repository, it may have different views; dynamic projection offer a genric way to combine the root entity and its views in one query method.
+
 
