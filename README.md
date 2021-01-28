@@ -22,5 +22,9 @@ An open projection decorated with SpEL enables us to define interface methods wi
 
 drawback: its query is created during the runtime, so Spring cannot optimize the query in the advance.
 
+## class-based project
 
+instead of defining interfaces and allowing Spring to create proxy around them, we may create our own classes to project from the root entity via the repository.
+
+a constraint: the class overrides hashcode and equal; constructor parameter name must the same as the counterparts declared in the root entity. 
 
