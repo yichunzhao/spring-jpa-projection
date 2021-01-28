@@ -20,6 +20,7 @@ a closed project may carry out a nested projection, but it must root on the owne
 
 An Open projection decorated with SpEL enables us to define interface methods with unmatched names and with return values re-computed at a runtime.
 
+drawback: its query is created during the runtime, so Spring cannot optimize the query in the advance.
 
 
 
