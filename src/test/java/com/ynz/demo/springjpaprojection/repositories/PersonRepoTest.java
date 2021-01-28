@@ -2,6 +2,7 @@ package com.ynz.demo.springjpaprojection.repositories;
 
 import com.ynz.demo.springjpaprojection.entities.Person;
 import com.ynz.demo.springjpaprojection.projections.PersonView;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -29,6 +30,7 @@ class PersonRepoTest {
     }
 
     @Test
+    @DisplayName("Closed Projection")
     void getPersonViewByCity() {
         List<PersonView> personViews = personRepo.findByAddressCityIgnoreCase("Berlin");
 
@@ -36,7 +38,13 @@ class PersonRepoTest {
                 () -> assertThat(personViews, hasSize(1)),
                 () -> assertThat(personViews.get(0).getFirstName(), is("aaa"))
         );
+    }
 
+    @Test
+    @DisplayName("Open Projection")
+    void getFullNameFromPersonView() {
+        PersonView personViews = personRepo.findByAddressCityIgnoreCase("Berlin").get(0);
+        assertThat(personViews.getFullName(), is("aaa bbb"));
     }
 
 }
