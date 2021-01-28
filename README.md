@@ -30,6 +30,6 @@ a constraint: the class overrides hashcode and equal(the class may be handled in
 
 ## dynamic projection
 
-an root entity is queried through a repository, it may have different views; dynamic projection offer a genric way to combine the root entity and its views in one query method.
+a root entity is queried through a repository, it may have different views; the dynamic projection offers a genric way to combine the root entity and its views in one query method.
 
 
